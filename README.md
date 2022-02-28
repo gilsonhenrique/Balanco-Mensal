@@ -19,7 +19,9 @@ Identação/Comentários, Refatoração, Implementação de POO, Composer/Biblio
 ## Capturas de tela
 
 ### Tela de Cadastro
+![image](https://user-images.githubusercontent.com/80334774/156066149-5e838b91-0b2a-4a5c-aa13-6fce61145aa4.png)
 
 
 ### Tela do Relatório
+![image](https://user-images.githubusercontent.com/80334774/156065981-67dcbb57-b2a9-400f-afd8-4ac442d25145.png)
 
