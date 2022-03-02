@@ -1,17 +1,21 @@
 <?php
 require_once 'calculos.php';
-//require_once 'model.php';
-var_dump($_POST);
 ?>
 <!DOCTYPE html>
 <html lang = "pt-br">
 <head>
   <title>IGREJA ABCD</title>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-    
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="estilo/style.css">
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- style.css -->
+  <link rel="stylesheet" type="text/css" href="estilo/style.css">
+
+  <title>Balanço Mensal</title>
 
 <body>
 <div>
@@ -26,8 +30,7 @@ var_dump($_POST);
   </div>
 </nav>
 </div>
-
-<div class="table-responsive p-2">
+<div class="table-responsive">
 <h2 align="center">IGREJA ABCD</h2>
 <h2 align="center">Setor de Contas - Relatório Mensal - <?=$mes_extenso["$mes"] ."/" . $ano_atual?></h2> 
 <table class="table table-striped mt-5">
@@ -39,9 +42,10 @@ var_dump($_POST);
       <th style="text-align: end">Despesas</th>
     </tr>
   </thead>
+
   <tbody>
     <?php
-    //Intancia  
+//Utilizando a classe que formata números p/ R$  
     $formatter = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
     foreach ($todos_atual as $row)  : ?>
     <tr>
@@ -82,18 +86,21 @@ var_dump($_POST);
       <td style="text-align: end"><?='R$ '.number_format($ts_atu, 2 , ",", ".")?></td>
   </tr>
   <tr>
-    <th style="text-align: end">Saldo em: <?=$ultimo_dia."/".$mes_anterior?></th>
+<!-- SALDO DO ÚLTIMO DIA DO MES ANTERIOR -->
+    <th style="text-align: end">Saldo em: <?=$ultimo_dia."/".$mes_anterior_rel?></th>
   </tr>
   <tr>
     <td style="text-align: end"><?='R$ '.number_format($re_de_ant, 2 , ",", ".")?></td>
   </tr>  
   <tr>
+<!-- RECEITAS - DESPESAS -->
     <th style="text-align: end">Receitas - Despesas: <?="(".$mes_extenso["$mes_atual"] ."/" . $ano_atual.")"?></th>
   </tr>
   <tr>
     <td style="text-align: end"><?='R$ '.number_format($re_de, 2 , ",", ".")?></td>
   </tr>
   <tr>
+<!-- SALDO FINAL  -->
     <th style="text-align: end">Saldo Final: <?="(".$mes_extenso["$mes_atual"] ."/" . $ano_atual.")"?></th>
   </tr>
   <tr>

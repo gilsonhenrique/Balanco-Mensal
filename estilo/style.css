@@ -7,35 +7,20 @@ body {
 
 /* Tabela do Bootstrap */
 .table-responsive{
-	width: 80%;/* Largura da tabela*/
-	margin: auto;/* Centraliza sua tabela */
-	padding: 16px;
-	margin-top: 30px;
+	width: 80% !important;/* Largura da tabela*/
+	margin: auto !important;/* Centraliza sua tabela */
+	padding: 16px !important;
+	margin-top: 80px !important;
 }
-/*
-
-Alinhamento vertical com id na classe
-
-*/
+/* Centralizar conteúdo na vertical */
 #vertical-center{
 /*centralizar de forma responsiva*/
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-70%);/*70% um pouco acima do meio*/
+    transform: translate(-50%,-50%);
 
 }
-#background {
-/*width: 100vw;
-height: 100vh;
-background: url('calculator-ga1699b74b_1280.jpg');
-background-size: cover;
--webkit-filter: blur(10px);
--moz-filter: blur(10px);
--o-filter: blur(10px);
--ms-filter: blur(10px);
-filter: blur(10px);*/
-	}
 #h1{
     font-size: 200px !important;
 }
