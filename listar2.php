@@ -1,5 +1,5 @@
 <?php
-require_once 'calculos.php';
+require_once 'core.php';
 ?>
 <!DOCTYPE html>
 <html lang = "pt-br">
@@ -32,7 +32,7 @@ require_once 'calculos.php';
 </div>
 <div class="table-responsive">
 <h2 align="center">IGREJA ABCD</h2>
-<h2 align="center">Setor de Contas - Relatório Mensal - <?=$mes_extenso["$mes"] ."/" . $ano_atual?></h2> 
+<h2 align="center">Setor de Contas - Relatório Mensal - <?=$mes_extenso["$mes_relat"] ."/" . $ano_relat?></h2> 
 <table class="table table-striped mt-5">
   <thead class="table-active">
     <tr>
@@ -47,7 +47,7 @@ require_once 'calculos.php';
     <?php
 //Utilizando a classe que formata números p/ R$  
     $formatter = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
-    foreach ($todos_atual as $row)  : ?>
+    foreach ($todos_mes_relat as $row)  : ?>
     <tr>
       <td style="text-align: center"><?= date('d/m/Y', strtotime($row['data']))?></td>
       <td><?= $row['descricao']?></td>
@@ -94,14 +94,14 @@ require_once 'calculos.php';
   </tr>  
   <tr>
 <!-- RECEITAS - DESPESAS -->
-    <th style="text-align: end">Receitas - Despesas: <?="(".$mes_extenso["$mes_atual"] ."/" . $ano_atual.")"?></th>
+    <th style="text-align: end">Receitas - Despesas: <?="(".$mes_extenso["$mes_relat"] ."/" . $ano_relat.")"?></th>
   </tr>
   <tr>
     <td style="text-align: end"><?='R$ '.number_format($re_de, 2 , ",", ".")?></td>
   </tr>
   <tr>
 <!-- SALDO FINAL  -->
-    <th style="text-align: end">Saldo Final: <?="(".$mes_extenso["$mes_atual"] ."/" . $ano_atual.")"?></th>
+    <th style="text-align: end">Saldo Final: <?="(".$mes_extenso["$mes_relat"] ."/" . $ano_relat.")"?></th>
   </tr>
   <tr>
     <td style="text-align: end"><?='R$ '.number_format($sd_anual, 2 , ",", ".")?></td>

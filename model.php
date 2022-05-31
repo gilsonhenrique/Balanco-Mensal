@@ -1,76 +1,38 @@
 <?php
-require_once 'conexao.php';
-/*
-*   Definição/Ajuste na data o relatório
-*/
-$mes_atual = $_POST['mes'];
-$ano_atual =  $_POST['ano'];
-$mes_anterior_rel = '';
-$ano_anterior_rel = '';
-/*
-*
-* Função p/ setar "mes anterior / ano anterior" do relatório
-*/
-function mesAnoAnterior($mes,$ano)
-{
-	if ($mes > 1 && $mes <= 12) {
-		$mes = $mes - 1;
-		settype($ano, "int");
-	}elseif ($mes = 1) {
-		$mes = 12;
-		$ano = $ano - 1;
-	}
-	return [$mes, $ano];
-}
-
-$mes_ano= mesAnoAnterior($mes_atual,$ano_atual);
-$mes_anterior_rel = $mes_ano[0];
-$ano_anterior_rel = $mes_ano[1];
-/*
-*
-* Definir o último dia do mes anterior
-*/
-$ultimo_dia = date("t", mktime(0,0,0,$mes_anterior_rel,'01',$ano_anterior_rel)); // Mágica, plim!
 /*
 *
 *  CONSULTAS AO BANCO DE DADOS
 *
-*  Listar Tudo mês ANTERIOR
 */
-$sql = "SELECT * FROM `balanco` WHERE month(data) = $mes_anterior_rel ORDER BY data ASC";
+function listarMes($mes, $ano, $PDO){
+$sql = "SELECT * FROM `balanco` WHERE extract(month from data) = $mes AND extract(year from data) = $ano ORDER BY data ASC";
 $statement = $PDO->query($sql);
-$todos_ant = $statement->fetchAll(PDO::FETCH_ASSOC);
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+return $result;
+}
 /*
-*  Listar Tudo mês ANTERIOR  = ENTRADA
+*  Soma Tudo mês ANTERIOR  = ENTRADA / SAIDA
 */
-$sql = "SELECT SUM(valor) FROM `balanco` WHERE data <= '$ano_anterior_rel-$mes_anterior_rel-$ultimo_dia' AND status = 'ENTRADA'";
+function somaMesAnteriorStatus($ate_ultimo_dia, $status, $PDO){
+
+$sql = "SELECT SUM(valor) FROM `balanco` WHERE data <= '$ate_ultimo_dia' AND status = $status";
 $stmt = $PDO->query($sql);
-$te_ant = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+return $result;
+}
 /*
-*  Listar Tudo mês ANTERIOR  = SAIDA
+*
+*  Soma Tudo mês ATUAL  = ENTRADA / SAIDA
 */
-$sql = "SELECT SUM(valor) FROM `balanco` WHERE data <= '$ano_anterior_rel-$mes_anterior_rel-$ultimo_dia' AND status = 'SAIDA'";
+function somaMesAtualStatus($mes, $ano, $status, $PDO){
+
+$sql = "SELECT SUM(valor) FROM `balanco` WHERE extract(month from data) = $mes AND extract(year from data) = $ano AND status = $status";
 $stmt = $PDO->query($sql);
-$ts_ant = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+return $result;
+}
 /*
-*  Listar Tudo mês ATUAL
-*/
-$sql = "SELECT * FROM `balanco` WHERE extract(month from data) = $mes_atual AND extract(year from data) = $ano_atual ORDER BY data ASC";
-$statement = $PDO->query($sql);
-$todos_atual = $statement->fetchAll(PDO::FETCH_ASSOC);
-/*
-*  Listar Tudo mês ATUAL = ENTRADA
-*/
-$sql = "SELECT SUM(valor) FROM `balanco` WHERE extract(month from data) = $mes_atual AND extract(year from data) = $ano_atual AND status = 'ENTRADA'";
-$stmt = $PDO->query($sql);
-$te_atu = $stmt->fetchAll(PDO::FETCH_ASSOC);
-/*
-*  Listar Tudo mês ATUAL = SAIDA
-*/
-$sql = "SELECT SUM(valor) FROM `balanco` WHERE extract(month from data) = $mes_atual AND extract(year from data) = $ano_atual AND status = 'SAIDA'";
-$stmt = $PDO->query($sql);
-$ts_atu = $stmt->fetchAll(PDO::FETCH_ASSOC);
-/*
+*
 *  ============================================================================
 *
 *  INSERT, DELETE, UPDATE AO BANCO DE DADOS
@@ -128,3 +90,9 @@ function cadastrar(){
 	endif;
 
 }
+
+function atualizar($id){
+	}
+
+function deletar($id){
+	}
