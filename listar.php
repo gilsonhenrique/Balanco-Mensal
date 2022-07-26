@@ -16,8 +16,8 @@
 <form method="POST" action="listar2.php">
   <div class="col-md-4 offset-md-4 mb-5 mt-2">
   <label for="" class="form-label">Mes:</label>
-  <select class="form-select" aria-label="Default select example" name="mes" id="mes">
-  <option selected>Selecione o mes</option>
+  <select class="form-select" aria-label="Default select example" name="mes" id="mes" required>
+  <option value="">Selecione o mes</option>
   <option value=1>Janeiro</option>
   <option value=2>Fevereiro</option>
   <option value=3>Março</option>
@@ -34,8 +34,8 @@
 </div>
 <div class="col-md-4 offset-md-4">
   <label for="" class="form-label">Ano:</label>
-<select class="form-select" aria-label="Default select example" name="ano" id="ano">
-  <option selected>Selecione o ano</option>
+<select class="form-select" aria-label="Default select example" name="ano" id="ano" required>
+  <option value="">Selecione o ano</option>
   <option value=2021>2021</option>
   <option value=2022>2022</option>
   <option value=2023>2023</option>

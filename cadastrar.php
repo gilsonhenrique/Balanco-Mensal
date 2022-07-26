@@ -26,20 +26,20 @@
 
       <div class="col-md-4 offset-md-4">
         <label for="datamov" class="form-label">Data</label>
-        <input type="date" class="form-control" id="datamov" name="datamov" value= "<?php if(isset($_POST['datamov'])){ echo $_POST['datamov'];}?>">
+        <input type="date" class="form-control" id="datamov" name="datamov" value= "<?php if(isset($_POST['datamov'])){ echo $_POST['datamov'];}?>" required>
       </div>
 
       <div class="col-md-4 offset-md-4">
         <label class="form-label mt-3">Tipo:</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" id="entrada" name="status" value="ENTRADA" <?php if(isset($_POST['status']) && $_POST['status'] == 'ENTRADA'){ echo 'checked';}?>>
+          <input class="form-check-input" type="radio" id="entrada" name="status" value="ENTRADA" <?php if(isset($_POST['status']) && $_POST['status'] == 'ENTRADA'){ echo 'checked';}?> required>
           <label class="form-check-label" for="entrada">Entrada</label>
         </div>
       </div>
 
       <div class="col-md-4 offset-md-4">
         <div class="form-check">
-         <input class="form-check-input" type="radio" id="saida" name="status" value="SAÍDA" <?php if(isset($_POST['status']) && $_POST['status'] == 'SAÍDA'){ echo 'checked';}?>>
+         <input class="form-check-input" type="radio" id="saida" name="status" value="SAÍDA" <?php if(isset($_POST['status']) && $_POST['status'] == 'SAÍDA'){ echo 'checked';}?> required>
          <label class="form-check-label" for="saida">Saída</label>
        </div>
 

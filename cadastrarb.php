@@ -27,19 +27,19 @@
 
 			<div class="col-md-4 offset-md-4 mt-3">
 				<label for="datamov" class="form-label">Data:</label>
-				<input type="date" class="form-control" id="datamov" name="datamov" value= "<?php if(isset($_POST['datamov'])){ echo $_POST['datamov'];}?>">
+				<input type="date" class="form-control" id="datamov" name="datamov" value= "<?php if(isset($_POST['datamov'])){ echo $_POST['datamov'];}?>" required>
 			</div>
 			<div class="col-md-4 offset-md-4 mt-3">
 				<label class="form-label">Tipo:</label>
 				<div class="form-check">
-					<input class="form-check-input" type="radio" id="entrada" name="status" value="ENTRADA" <?php if(isset($_POST['status']) && $_POST['status'] == 'ENTRADA'): echo 'checked'; else: echo 'disabled'; endif;?>>
+					<input class="form-check-input" type="radio" id="entrada" name="status" value="ENTRADA" <?php if(isset($_POST['status']) && $_POST['status'] == 'ENTRADA'): echo 'checked'; else: echo 'disabled'; endif;?> required>
 					<label class="form-check-label" for="entrada">Entrada</label>
 				</div>
 			</div>
 
 			<div class="col-md-4 offset-md-4 mt-3">
 				<div class="form-check">
-					<input class="form-check-input" type="radio" id="saida" name="status" value="SAÍDA" <?php if(isset($_POST['status']) && $_POST['status'] == 'SAÍDA'): echo 'checked'; else: echo 'disabled';endif;?>>
+					<input class="form-check-input" type="radio" id="saida" name="status" value="SAÍDA" <?php if(isset($_POST['status']) && $_POST['status'] == 'SAÍDA'): echo 'checked'; else: echo 'disabled';endif;?> required>
 					<label class="form-check-label" for="saida">Saída</label>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 
 				<div class="col-md-4 offset-md-4 mt-3">
 					<label for="entrada" class="form-label">Entrada:</label>
-					<select class="form-select form-select" name="entrada" id="entrada"required>
+					<select class="form-select form-select" name="entrada" id="entrada" required>
 						<option value=""><?php if(isset($_POST['entrada'])): echo $_POST['entrada']; else: echo "--Selecione o tipo de entrada--"; endif;?></option>
 						<option value="Oferta">Oferta</option>
 						<option value="Escola Dominical">Escola Domical</option>
@@ -69,7 +69,7 @@
 				<div class="col-md-4 offset-md-4 mt-3">
 					<div class="input-group mb-3">
 						<span class="input-group-text">R$</span>
-						<input type="number" step="0.01" name="valor" min="0.01" class="form-control" aria-label="Real (com ponto e duas casas decimais)" value="<?php if(isset($_POST['valor'])){ echo $_POST['valor'];}?>"required>
+						<input type="number" step="0.01" name="valor" min="0.01" class="form-control" aria-label="Real (com ponto e duas casas decimais)" value="<?php if(isset($_POST['valor'])){ echo $_POST['valor'];}?>" required>
 					</div>
 
 				<?php endif; ?>
@@ -80,7 +80,7 @@
 
 					<div class="col-md-4 offset-md-4 mt-3 mb-3">
 						<label for="saida" class="form-label">Saída:</label>
-						<select class="form-select form-select" name="saida" id="saida"required>
+						<select class="form-select form-select" name="saida" id="saida" required>
 							<option value=""><?php if(isset($_POST['saida'])): echo $_POST['saida']; else: echo "--Selecione o tipo de saida--"; endif;?></option>
 							<option value="Aluguel:">Aluguel:</option>	
 							<option value="Plano de Saúde">Plano de Saúde Pastoral</option>
@@ -103,7 +103,7 @@
 					<div class="col-md-4 offset-md-4 mt-3">
 						<div class="input-group mb-3">
 							<span class="input-group-text">R$</span>
-							<input type="number" step="0.01" name="valor" min="0.01" class="form-control" aria-label="Real (com ponto e duas casas decimais)" value="<?php if(isset($_POST['valor'])){ echo $_POST['valor'];}?>"required>
+							<input type="number" step="0.01" name="valor" min="0.01" class="form-control" aria-label="Real (com ponto e duas casas decimais)" value="<?php if(isset($_POST['valor'])){ echo $_POST['valor'];}?>" required>
 						</div>
 
 					<?php endif;?>
