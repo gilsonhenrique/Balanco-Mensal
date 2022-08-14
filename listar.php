@@ -2,12 +2,18 @@
 <html lang = "pt-br">
 <head>
   <title>IGREJA ABCD</title>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-    
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="estilo/style.css">
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- style.css -->
+  <link rel="stylesheet" type="text/css" href="estilo/style.css">
+
+  <title>Balanço Mensal</title>
+</head>
 <body>
 <div class="container" id="vertical-center">
 <div class="col-md-6 offset-md-3 mb-3">

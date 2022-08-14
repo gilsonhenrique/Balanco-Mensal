@@ -16,7 +16,7 @@ require_once 'core.php';
   <link rel="stylesheet" type="text/css" href="estilo/style.css">
 
   <title>Balanço Mensal</title>
-
+</head>
 <body>
 <div>
 <nav class="navbar fixed-top navbar-light bg-light p-3" style="background-color: #e5e5e5;">
