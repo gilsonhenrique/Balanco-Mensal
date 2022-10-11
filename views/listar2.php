@@ -1,5 +1,5 @@
 <?php
-require_once 'core.php';
+require_once '../core.php';
 ?>
 <!DOCTYPE html>
 <html lang = "pt-br">
@@ -13,7 +13,7 @@ require_once 'core.php';
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- style.css -->
-  <link rel="stylesheet" type="text/css" href="estilo/style.css">
+  <link rel="stylesheet" type="text/css" href="../estilo/style.css">
 
   <title>Balanço Mensal</title>
 </head>
@@ -22,7 +22,7 @@ require_once 'core.php';
 <nav class="navbar fixed-top navbar-light bg-light p-3" style="background-color: #e5e5e5;">
    <div class= "container">
     <div class="col-md-6 text-center">
-      <a href="index.php" class="btn btn-primary btn-lg">Início</a>
+      <a href="../" class="btn btn-primary btn-lg">Início</a>
     </div>
         <div class="col-md-6 text-center">
       <a href="listar.php" class="btn btn-primary btn-lg">Relatório</a>

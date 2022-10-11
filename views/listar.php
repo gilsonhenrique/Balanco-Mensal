@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- style.css -->
-  <link rel="stylesheet" type="text/css" href="estilo/style.css">
+  <link rel="stylesheet" type="text/css" href="../estilo/style.css">
 
   <title>Balanço Mensal</title>
 </head>
@@ -55,7 +55,7 @@
   <input type="submit" value="Avançar" class="btn btn-primary">
  </div>
  <div class="col text-end">
-    <a href="index.php" class="link-secondary mt-5">Retornar</a>
+    <a href="../" class="link-secondary mt-5">Retornar</a>
  </div>
 </div>
 

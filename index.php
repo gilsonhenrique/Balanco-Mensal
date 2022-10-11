@@ -28,10 +28,10 @@
 
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="btn btn-primary me-5" href="cadastrar.php" role="button">Cadastro</a>
+          <a class="btn btn-primary me-5" href="views/cadastrar.php" role="button">Cadastro</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary md-5" href="listar.php" role="button">Relatório</a>
+          <a class="btn btn-primary md-5" href="views/listar.php" role="button">Relatório</a>
         </li>
       </ul>
     </div>
